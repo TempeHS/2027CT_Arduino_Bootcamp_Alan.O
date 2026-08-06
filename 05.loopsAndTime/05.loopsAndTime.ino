@@ -49,12 +49,12 @@ void setup() {
 }
 
 void loop() {
-   for (int pitch = 200; pitch < 1000; pitch += 10) {
-    tone(BUZZER_PIN, pitch);
-    delay(10);
-  }
-  for (int pitch = 1000; pitch > 200; pitch -= 10) {
-    tone(BUZZER_PIN, pitch);
-    delay(10);
+  digitalWrite(LED_PIN, HIGH);
+  delay(1000);
+  digitalWrite(LED_PIN, LOW);
+  delay(1000);
+
+  if (digitalRead(BUTTON_PIN) == HIGH) {
+    Serial.println("Button pressed!");
   }
 }
